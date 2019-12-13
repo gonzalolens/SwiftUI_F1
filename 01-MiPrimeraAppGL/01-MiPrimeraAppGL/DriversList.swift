@@ -13,7 +13,7 @@ struct DriversList: View {
         NavigationView{
             List(drivers) {
                 driver in
-                //Esto quedo fuera de uso por Apple. No se usa mas
+                //Esto quedo fuera de uso por Apple.
                 //NavigationButton(destination: ContentView()){
                 
                 NavigationLink(destination: DriverDetail(driver: driver) ){
