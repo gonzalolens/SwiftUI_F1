@@ -20,20 +20,26 @@ struct StatsRow: View {
                 .font(.system(size: 30))
                 .fontWeight(.bold)
                 .padding(.leading,40)
+                //.minimumScaleFactor(0.5)
             
             Text(statValue)
                 .font(.system(size: 30))
                 .fontWeight(.ultraLight)
+                //.multilineTextAlignment(.leading)
                 .padding(.trailing, 40)
+                //.minimumScaleFactor(0.5)
+                
+                
             
             Spacer()
     
-        }
+        }//.minimumScaleFactor(0.5)
     }
 }
 
 struct StatsRow_Previews: PreviewProvider {
     static var previews: some View {
-        StatsRow(statKey: "Edad", statValue: "34")
+        StatsRow(statKey: "Origen", statValue: "Nueva Zelanda")
+        .previewDevice("iPhone SE")
     }
 }

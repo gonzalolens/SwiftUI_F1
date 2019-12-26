@@ -32,8 +32,10 @@ struct DriverDetail: View {
             
             //Text("Lewis Hamilton")
             Text(driver.name)
-                .font(.system(size: 35 ))
+                .font(.system(size: 45 ))
                 .fontWeight(.bold)
+                //.minimumScaleFactor(0.5)
+                .minimumScaleFactor(0.8)
 
             //Ahora invoco por cada linea a mostrar al StatsRow()
             StatsRow(statKey: "Edad", statValue: String(driver.age))
@@ -49,6 +51,17 @@ struct DriverDetail: View {
 
 struct DriverDetail_Previews: PreviewProvider {
     static var previews: some View {
-        DriverDetail(driver: drivers[2])
+        Group{
+            
+            DriverDetail(driver: drivers[0])
+                .previewDevice("iPhone 11 Pro Max")
+                .previewDisplayName("iPhone 11 Prox Max")
+
+            DriverDetail(driver: drivers[0])
+                .previewDevice("iPhone SE")
+            .previewDisplayName("iPhone SE")
+
+            
+        }
     }
 }

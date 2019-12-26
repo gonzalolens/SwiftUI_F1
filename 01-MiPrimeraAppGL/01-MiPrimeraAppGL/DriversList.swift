@@ -30,6 +30,13 @@ struct DriversList: View {
 
 struct DriversList_Previews: PreviewProvider {
     static var previews: some View {
+        Group{
+            
+            DriversList()
+            .previewDevice("iPhone 11 Pro Max")
+            
         DriversList()
+        .previewDevice("iPhone SE")
+        }
     }
 }
