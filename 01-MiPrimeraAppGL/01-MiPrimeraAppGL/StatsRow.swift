@@ -15,19 +15,20 @@ struct StatsRow: View {
     
     var body: some View {
         
-        HStack(alignment: .center) {
+        HStack(alignment: .bottom) {
             Text(statKey + ":")
                 .font(.system(size: 30))
                 .fontWeight(.bold)
                 .padding(.leading,40)
                 //.minimumScaleFactor(0.5)
             
-            Text(statValue)
-                .font(.system(size: 30))
-                .fontWeight(.ultraLight)
+            Text(statValue)            
+                .font(.system(size: 30)).scaledToFit()
+                
+                //.fontWeight(.ultraLight)
                 //.multilineTextAlignment(.leading)
                 .padding(.trailing, 40)
-                //.minimumScaleFactor(0.5)
+                
                 
                 
             

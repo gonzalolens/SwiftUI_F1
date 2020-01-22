@@ -22,7 +22,8 @@ struct DriverDetail: View {
             //Image("hamilton")
             Image(driver.imageName)
                 .resizable()
-                .frame(width: 130.0, height: 130.0)
+                .frame(minWidth: 130, idealWidth: 130, maxWidth: 300, minHeight: 130, idealHeight: 130, maxHeight: 300, alignment: .center)
+                .scaledToFit()
                 .clipShape(Circle())    //Para que la imagen quede dentro de un circulo
                 .background(Circle().foregroundColor(driver.team.color))
                 .overlay(Circle().stroke(Color.white, lineWidth: 3))
@@ -30,12 +31,14 @@ struct DriverDetail: View {
                 .offset(x:0,y:-65)
                 .padding(.bottom, -60)
             
+            
             //Text("Lewis Hamilton")
             Text(driver.name)
                 .font(.system(size: 45 ))
                 .fontWeight(.bold)
-                //.minimumScaleFactor(0.5)
+                .padding(.horizontal)
                 .minimumScaleFactor(0.8)
+                
 
             //Ahora invoco por cada linea a mostrar al StatsRow()
             StatsRow(statKey: "Edad", statValue: String(driver.age))
