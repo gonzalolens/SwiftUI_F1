@@ -17,7 +17,7 @@ struct DriverRow: View {
         HStack {
             //Image("hamilton")
             Image(driver.imageName)
-                .resizable()
+                .resizable().scaledToFit()
                 .frame(width:90, height:90)
                 .clipShape(Circle())
                 .background(Circle().foregroundColor(driver.team.color))
@@ -51,9 +51,13 @@ struct DriverRow_Previews: PreviewProvider {
             DriverRow(driver: drivers[5])
 
            DriverRow(driver: drivers[6])
+            
+            
        //        .previewLayout(.fixed(width: 450, height: 70))
  
         }
+        .previewDevice("iPhone SE")
+        .previewDisplayName("iPhone SE")
           
     }
 }
